@@ -11,16 +11,8 @@ if __name__=='__main__':
     common.welcome_print()
     
     while True:
-        
-        if snat.choice==0:
-            snat.show_options()
-            
-        choice=input('\t\tPlease Enter Your Choice!\t')
-        if choice=='q':
-            print('Thankyou for using snat. Please provide your feedback and bug report @https://github.com/furiousmohan/SNAT.git')
-            sys.exit(0)
-        snat.choice=int(choice)
-        snat.current_module=snat.modules.get(choice)
-        snat.process_input(choice)
+        user_input=snat.get_user_input()
+        print('========user input',user_input)
+        snat.process_input(user_input)
         
     
