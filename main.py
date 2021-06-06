@@ -11,8 +11,12 @@ if __name__=='__main__':
     common.welcome_print()
     
     while True:
-        user_input=snat.get_user_input()
-        print('========user input',user_input)
-        snat.process_input(user_input)
+        try:
+            user_input=snat.get_user_input()
+            if user_input:
+                snat.process_input(user_input)
+            
+        except KeyboardInterrupt:
+            snat.exit_with_message()
         
     
